@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>皓之睿后台</title>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="stylesheet" type="text/css" href="../../static/admin/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="../../static/admin/css/mains.css">
+    <script type="text/javascript" src="../../static/common/js/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="../../static/admin/js/jquery.form.min.js"></script>
+    <script src="../../static/admin/tinymce/js/tinymce/tinymce.min.js"></script>
+    <script src="../../static/admin/js/tinymce_setup.js"></script>
+    <script src="../../static/admin/js/feedback_delete.js"></script>
+</head>
+
+<body class="inframe_body">
+<div class="breadcrub">当前位置: 后台管理 > 反馈审核 > 反馈删除</div>
+
+<form class="release_form">
+    <h3>回复反馈邮件</h3>
+    <div class="form-group"><label>反馈用户：</label>
+        <input type="text" class="input_txt2" name="fb_user" value="{{ data.feedback.fb_user }}">
+    </div>
+    <div class="form-group"><label>反馈邮箱：</label>
+        <input type="text" class="input_txt2" name="fb_email" value="{{ data.feedback.fb_email }}">
+    </div>
+    <div class="form-group"><label>反馈内容：</label>
+        <textarea class="input_multxt" name="fb_content">{{ data.feedback.fb_content }}</textarea>
+    </div>
+    <input type="hidden" name="feedback_id" value="{{ data.feedback.id }}">
+
+    <div class="form-group indent-group line-top">
+        <input type="submit" value="删 除" class="confirm">
+        <input type="button" value="取 消" class="cancel" onclick="cancel()">
+    </div>
+
+    <div class="error_tip2">错误提示</div>
+</form>
+
+</body>
+</html>

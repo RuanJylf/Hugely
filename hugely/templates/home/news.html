@@ -1,0 +1,72 @@
+{% extends "home/base.html" %}
+
+{% block contentBlock %}
+    <div id="main-wrap">
+        <!--  Page Content  -->
+        <div id="page-content" class="header-static">
+            <!--  Page Header  -->
+            <div id="page-header" class="secondary-background">
+                <div class="container">
+                    <div class="row no-margin">
+                        <div class="text">
+                            <h1 class="white">新闻资讯</h1>
+                            <ul class="breadcrumb white">
+                                <li><a href="{{ url_for('home.index') }}">官网首页</a></li>
+                                <li><a href="#" onclick="javascript:history.back(-1);">返回上页</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--  END Page Header  -->
+            <div id="home-wrap" class="content-section fullpage-wrap">
+                {% for news in data.news_list %}
+                    <div {% if data.news_list.index(news) % 2 %} class="light-background" {% endif %}>
+                        <div class="container">
+                            <!-- Service -->
+                            <div class="row no-margin padding-lg">
+                                <div class="col-md-4 padding-leftright-null">
+                                    <div class="text padding-topbottom-null newstitle">
+                                        <h2 class="margin-bottom-null left">{{ news.create_time }}</h2>
+                                    </div>
+                                </div>
+                                <div class="col-md-8 padding-leftright-null">
+                                    <div class="text padding-topbottom-null">
+                                        <h3><a href="{{ news.link }}">{{ news.title }}</a></h3>
+                                        <p class="margin-bottom-null">{{ news.digest }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- END Service -->
+                        </div>
+                    </div>
+                {% endfor %}
+                <!-- Section Partners -->
+                <!-- END Section Partners -->
+            </div>
+        </div>
+        <!--  END Page Content -->
+        <div class="box">
+            <div id="pagination" class="page"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block scriptBlock %}
+    <link rel="stylesheet" href="../../static/common/css/jquery.pagination.css">
+    <script type="text/javascript" src="../../static/common/js/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="../../static/common/js/jquery.pagination.min.js"></script>
+
+    <script>
+        $(function () {
+            $("#pagination").pagination({
+                currentPage: {{ data.current_page }},
+                totalPage: {{ data.total_page }},
+                callback: function (current) {
+                    window.location = '/news?page=' + current
+                }
+            });
+        });
+    </script>
+{% endblock %}
+

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>皓之睿后台</title>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="stylesheet" type="text/css" href="../../static/admin/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="../../static/admin/css/mains.css">
+    <script type="text/javascript" src="../../static/common/js/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="../../static/admin/js/jquery.form.min.js"></script>
+    <script type="text/javascript" src="../../static/admin/tinymce/js/tinymce/tinymce.min.js"></script>
+    <script type="text/javascript" src="../../static/admin/js/tinymce_setup.js"></script>
+</head>
+
+<body class="inframe_body">
+<div class="breadcrub">当前位置: 后台管理 > 反馈审核 > 反馈回复</div>
+
+<form class="release_form">
+    <h3>反馈回复</h3>
+    <div class="form-group"><label>反馈用户：</label>
+        <input type="text" class="input_txt2" name="fb_user" value="{{ data.feedback.fb_user }}">
+    </div>
+    <div class="form-group"><label>反馈邮箱：</label>
+        <input type="text" class="input_txt2" name="fb_email" value="{{ data.feedback.fb_email }}">
+    </div>
+    <div class="form-group"><label>反馈内容：</label>
+        <textarea class="input_multxt" name="digest">{{ data.feedback.fb_content }}</textarea>
+    </div>
+
+    <div class="form-group"><label>回复标题：</label><input type="text" class="input_txt2" name="title"></div>
+    <div class="form-group"><label>回复内容：</label><textarea class="input_multxt" name="content"></textarea></div>
+
+    <input type="hidden" name="fb_id" value="{{ data.feedback.id }}">
+    <input type="hidden" name="page" value="{{ data.page }}">
+
+    <div class="form-group indent-group line-top">
+        <input type="submit" value="回 复" class="confirm">
+        <input type="button" value="取 消" class="cancel" onclick="cancel()">
+    </div>
+    <div class="error_tip2">错误提示</div>
+</form>
+
+<script>
+    // 点击取消，返回上一页
+    function cancel() {
+        history.go(-1)
+    }
+</script>
+
+</body>
+</html>

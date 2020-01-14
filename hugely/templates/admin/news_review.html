@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>皓之睿后台</title>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="stylesheet" type="text/css" href="../../static/admin/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="../../static/admin/css/main.css">
+    <link rel="stylesheet" href="../../static/common/css/jquery.pagination.css">
+    <script type="text/javascript" src="../../static/common/js/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="../../static/common/js/jquery.pagination.min.js"></script>
+</head>
+
+<body>
+<div class="breadcrub">
+    当前位置: 新闻管理 > 新闻审核
+    <form class="news_filter_form">
+        <input type="text" placeholder="请输入新闻标题关键字" name="keywords" class="input_txt">
+        <input type="submit" value="搜 索" class="input_sub">
+    </form>
+</div>
+
+<div class="pannel">
+    <table class="common_table">
+        <tr>
+            <th width="5%">新闻编号</th>
+            <th width="10%">发布时间</th>
+            <th width="35%">新闻标题</th>
+            <th width="30%">链接网址</th>
+            <th width="10%">发布作者</th>
+            <th width="10%">管理操作</th>
+        </tr>
+
+        {% for news in data.news_list %}
+            <tr>
+                <td>{{ news.id }}</td>
+                <td>{{ news.create_time }}</td>
+                <td>{{ news.title }}</td>
+                <td>{{ news.link }}</td>
+                <td>{{ news.user_name }}</td>
+                <td class="btnbox">
+                    <a href="{{ url_for('admin.news_edit') }}?news_id={{ news.id }}" class="review">编辑</a>
+                    <a href="{{ url_for('admin.news_delete') }}?news_id={{ news.id }}" class="delete">删除</a>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+</div>
+
+<div class="box">
+    <div id="pagination" class="page"></div>
+</div>
+
+<script>
+    $(function () {
+        $("#pagination").pagination({
+            currentPage: {{ data.current_page }},
+            totalPage: {{ data.total_page }},
+            callback: function (current) {
+                window.location = '/admin/news_review?page=' + current
+            }
+        });
+    });
+</script>
+
+</body>
+</html>

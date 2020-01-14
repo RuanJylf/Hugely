@@ -1,0 +1,378 @@
+{% extends "home/base.html" %}
+
+{% block contentBlock %}
+    <div id="main-wrap">
+        <!--  Page Content  -->
+        <div id="page-content" class="header-static">
+            <!--  Slider  -->
+            <div id="flexslider-nav" class="fullpage-wrap small">
+                <ul class="slides">
+                    <li style="background-image:url(../../static/home/img/lun2.png)">
+                        <div class="text center">
+                            <h1 class="heading center slider margin-bottom-small flex-animation">鲁班尺智能系统</h1>
+                            <p class="heading slider1 center margin-bottom flex-animation">全渠道一站式解决方案</p>
+                            <p class="margin-bottom grey  margin-bottom flex-animation">在线3D远程智能量体技术
+                                <br>自主选择定制服装款式、面料等<br>
+                                智能下单，生产、物流配送和售后服务</p>
+                            <div class="padding-onlytop-md flex-animation">
+                                <a href="{{ url_for('home.lbc') }}"
+                                   class="btn-alt small shadow margin-xs-bottom-small">了解项目</a>
+                            </div>
+                        </div>
+                        <div class="gradient dark"></div>
+                    </li>
+                    <li style="background-image:url(../../static/home/img/lun1.png)">
+                        <div class="text center" style="top: 75%;">
+                            <h1 class="heading center slider margin-bottom-small flex-animation">蒲公英智能系统</h1>
+                            <p class="heading slider1 center flex-animation">数字3D服装销售软件</p>
+                            <p class=" grey flex-animation">为消费者解决得体、合体的痛点 <br>为企业解决销售和库存的痛点 </p>
+                            <div class="padding-onlytop-md flex-animation">
+                                <a href="{{ url_for('home.pgy') }}"
+                                   class="btn-alt small shadow margin-xs-bottom-small">了解项目</a>
+                            </div>
+                        </div>
+                        <div class="gradient dark"></div>
+                    </li>
+                    <li style="background-image:url(../../static/home/img/slider3.jpg)">
+                        <div class="text center">
+                            <h1 class="heading center slider margin-bottom-small flex-animation">meme米姆云店</h1>
+                            <p class="heading slider1 center margin-bottom flex-animation">全新OAO模式，全渠道一站式解决方案</p>
+                            <p class="margin-bottom grey  margin-bottom flex-animation">城市合伙人·全国火爆招募中 <br>巨大蓝海市场 15天快回报
+                                线上持续收益 <br>您可以不用开一家服装门店，但您是本地区的最大服装店主！</p>
+                            <div class="padding-onlytop-md flex-animation no-opacity">
+                                <a href="{{ url_for('home.meme') }}"
+                                   class="btn-alt small shadow margin-xs-bottom-small">了解项目</a>
+                            </div>
+                        </div>
+                        <div class="gradient dark"></div>
+                    </li>
+                </ul>
+                <div class="slider-navigation">
+                    <a href="#" class="flex-prev"><i class="material-icons">keyboard_arrow_left</i></a>
+                    <div class="slider-controls-container"></div>
+                    <a href="#" class="flex-next"><i class="material-icons">keyboard_arrow_right</i></a>
+                </div>
+                <div id="godown">
+                    <a href="#home-wrap" class="btn-down">
+                        <i class="material-icons">keyboard_arrow_down</i>
+                    </a>
+                </div>
+            </div>
+            <!--  END Slider  -->
+            <div id="home-wrap" class="content-section fullpage-wrap">
+                <!-- Abous us -->
+                <div class="container">
+                    <!-- Section Image -->
+                    <div class="row no-margin padding-onlytop-lg">
+                        <div class="col-md-6 padding-leftright-null">
+                            <div data-responsive="parent-height" data-responsive-id="about" class="text">
+                                <h2 class="margin-bottom-null left">meme米姆云店</h2>
+                                <div class="padding-onlytop-sm">
+                                    <p>全渠道一站式解决方案</p>
+                                    <p class="margin-bottom grey">传统服装门店+新零售MeMe云店系统，为商家提供一站式
+                                        管家服务，更为消费者打造购物共赢生态圈。成为MeMe云店合伙人，做服装行业的“滴滴”！</p>
+                                    <a href="{{ url_for('home.meme') }}" class="btn-pro">查看更多</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 padding-leftright-null">
+                            <div data-responsive="child-height" data-responsive-id="about"
+                                 class="section-image height-auto-sm">
+                                <picture class="section right">
+                                    <img src="../../static/home/img/about.jpg" class="img-responsive" alt="">
+                                </picture>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END Section Image -->
+                </div>
+
+                <!-- Services -->
+                <div class="light-background">
+                    <div class="container padding-lg">
+                        <div class="row no-margin">
+                            <div class="col-md-12 padding-leftright-null text-center">
+                                <h2 class="margin-bottom-small left">强大新零售技术，服装门店升级的保障</h2>
+                            </div>
+                            <div class="row no-margin">
+                                <div class="col-md-6 padding-leftright-null">
+                                    <div class="text padding-md-bottom-null">
+                                        <i class="material-icons color service left"><img
+                                                src="../../static/home/img/ding1.png"></i>
+                                        <div class="service-content large">
+                                            <h3 class="margin-bottom-extrasmall">定制微商城</h3>
+                                            <p class="margin-bottom-null">线下体验，线上成交</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 padding-leftright-null">
+                                    <div class="text padding-md-bottom-null">
+                                        <i class="material-icons color service left"><img
+                                                src="../../static/home/img/ding2.png"></i>
+                                        <div class="service-content large">
+                                            <h3 class="margin-bottom-extrasmall">交叉推荐功能</h3>
+                                            <p class="margin-bottom-null">增加产品品类，拓展销售渠道，增加收益
+                                                （独创智能推荐搭配系统，人衣、衣衣、场景搭配）。</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row no-margin">
+                                <div class="col-md-6 padding-leftright-null">
+                                    <div class="text padding-md-bottom-null">
+                                        <i class="material-icons color service left"><img
+                                                src="../../static/home/img/ding3.png"></i>
+                                        <div class="service-content large">
+                                            <h3 class="margin-bottom-extrasmall">3D试衣系统</h3>
+                                            <p class="margin-bottom-null">提高客单量，降低退货率</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 padding-leftright-null">
+                                    <div class="text padding-md-bottom-null">
+                                        <i class="material-icons color service left"><img
+                                                src="../../static/home/img/ding4.png"></i>
+                                        <div class="service-content large">
+                                            <h3 class="margin-bottom-extrasmall">无边界媒介直推系统</h3>
+                                            <p class="margin-bottom-null">微信公众号、小程序、APP、二维码、智能纽扣、 照片传播、朋友圈推广、抖音、头条、微信、
+                                                社交媒体、自媒体等</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row no-margin">
+                                <div class="col-md-6 padding-leftright-null">
+                                    <div class="text padding-md-bottom-null">
+                                        <i class="material-icons color service left"><img
+                                                src="../../static/home/img/ding5.png"></i>
+                                        <div class="service-content large">
+                                            <h3 class="margin-bottom-extrasmall">二级分销系统</h3>
+                                            <p class="margin-bottom-null">快速裂变传播，提成销售金额 （一键推介二维码，详情销售记录、 溯源、区块链）</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 padding-leftright-null">
+                                    <div class="text padding-md-bottom-null">
+                                        <i class="material-icons color service left"><img
+                                                src="../../static/home/img/ding6.png"></i>
+                                        <div class="service-content large">
+                                            <h3 class="margin-bottom-extrasmall">产品360°展示</h3>
+                                            <p class="margin-bottom-null">提升产品全面性，增加体验感</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- END Services -->
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row no-margin padding-onlytop-lg">
+                        <div class="col-md-6 padding-leftright-null">
+                            <div data-responsive="child-height" data-responsive-id="about"
+                                 class="section-image height-auto-sm">
+                                <picture class="section right">
+                                    <img src="../../static/home/img/picture2.png" class="img-responsive" alt="">
+                                </picture>
+                            </div>
+                        </div>
+                        <div class="col-md-6 padding-leftright-null">
+                            <div data-responsive="parent-height" data-responsive-id="about" class="text">
+                                <h2 class="margin-bottom-null left">蒲公英智能系统</h2>
+                                <div class="padding-onlytop-sm">
+                                    <!-- <p>副标题</p> -->
+                                    <p class="margin-bottom grey">蒲公英智能系统是用数字3D技术为服装企 业量身打造自己的销售平台，为消费者解决
+                                        得体、合体的痛点，分销、交叉推荐系统为 企业解决销售和库存的痛点。
+                                        系统包含了智能远程量体、智能推荐搭配、智能销 售、3D试衣等七大核心技术，且随时结合线上平台 微信公众号、小程序、二维码、微商城、智能纽扣等
+                                        植入任何端口。建立属于自己的个性分销系统，快
+                                        速裂变传播辐射全国。从而大大拓展销售渠道，增 加门店的客单量、提高连单率、复购率，减少库存， 有效的管理会员 。</p>
+                                    <a href="{{ url_for('home.pgy') }}" class="btn-pro">查看更多</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- END Section Image -->
+                </div>
+
+
+                <div class="light-background">
+                    <div class="container">
+                        <!-- Section Image -->
+                        <div class="row no-margin padding-lg">
+
+                            <div class="col-md-6 padding-leftright-null">
+                                <div data-responsive="parent-height" data-responsive-id="about" class="text">
+                                    <h2 class="margin-bottom-null left">鲁班尺智能系统</h2>
+                                    <div class="padding-onlytop-sm">
+                                        <p class="margin-bottom grey">鲁班尺智能系统是通过在线3D远程智能量体技术， 生成精准的人体净尺寸数据，通过自己拍正面、
+                                            侧面的脸部照片迅速生成自己的3D人模。
+                                            客户进入鲁班尺系统后可自主选择定制的服装款式、 面料、色彩、领型、门襟、袖口、胸巾和开叉等 十多个子模块和各项工艺细节，各种搭配细节选取
+                                            适合自己的服装。然后再试穿到自己的3D模型上，
+                                            体验3D试穿，感受各个角度以及细节的效果，最后 智能下单，生产、物流配送和售后服务。</p>
+                                        <a href="{{ url_for("home.lbc") }}" class="btn-pro">查看更多</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 padding-leftright-null">
+                                <div data-responsive="child-height" data-responsive-id="about"
+                                     class="section-image height-auto-sm">
+                                    <picture class="section right">
+                                        <img src="../../static/home/img/about.jpg" class="img-responsive" alt="">
+                                    </picture>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END Video Section -->
+                    <!--  Section Image Background with overlay  -->
+                    <div class="row margin-leftright-null grey-background">
+                        <div class="bg-img overlay responsive"
+                             style="background-image:url(../../static/home/img/quote-business.png)">
+                            <div class="container padding-sm">
+                                <div class="row no-margin">
+                                    <div class="text">
+                                        <h3 class="big white margin-bottom-small">“引进来，走出去”</h3>
+                                        <p class="white">江苏苏伦大数据科技研究院</p>
+                                        <p class="white">为江苏和国际大数据高端人才牵线带搭桥，组建跨国大数据人才高地</p>
+                                        <a href="{{ url_for('home.sulun') }}" class="btn-pro white">关于苏伦</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--  END Section Image Background with overlay  -->
+                    <!--  Section Testimonials  -->
+                    <!-- <div class="container">
+                        <div class="row no-margin padding-lg">
+                            <div class="col-md-12 padding-leftright-null text-center">
+                                <h3 class="big margin-bottom-small">客户评价</h3>
+                            </div>
+                            <section class="testimonials-carousel-simple col-md-12 padding-leftright-null padding-bottom-null">
+                                <div class="item padding-leftright-null">
+                                    <div class="text padding-bottom-null">
+                                        <div class="person">
+                                            <img src="home/img/quote-girl.jpg" alt="">
+                                            <div class="description">
+                                                <em>张三</em>
+                                                <span class="margin-null"> 某公司经理</span>
+                                            </div>
+                                        </div>
+                                        <blockquote class="margin-bottom-small">态度超棒的客服，工作细致的技术，CN科技公司非常好</blockquote>
+                                    </div>
+                                </div>
+                                <div class="item padding-leftright-null">
+                                    <div class="text padding-bottom-null">
+                                        <div class="person">
+                                            <img src="home/img/quote-man.jpg" alt="">
+                                            <div class="description">
+                                                <em>李四</em>
+                                                <span class="margin-null">某公司经理</span>
+                                            </div>
+                                        </div>
+                                        <blockquote class="margin-bottom-small">态度超棒的客服，工作细致的技术，CN科技公司非常好</blockquote>
+                                    </div>
+                                </div>
+                                <div class="item padding-leftright-null">
+                                    <div class="text padding-bottom-null">
+                                        <div class="person">
+                                            <img src="home/img/quote-girl-two.jpg" alt="">
+                                            <div class="description">
+                                                <em>王五</em>
+                                                <span class="margin-null">某公司经理</span>
+                                            </div>
+                                        </div>
+                                        <blockquote class="margin-bottom-small">态度超棒的客服，工作细致的技术，CN科技公司非常好</blockquote>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div> -->
+                    <!-- END Section Testimonials  -->
+                    <!-- Section News -->
+                    <!-- <div class="light-background">
+                    <div class="container">
+                        <div class="row no-margin padding-onlytop-lg">
+                            <div class="col-md-12 padding-leftright-null text-center">
+                                <h3 class="big margin-bottom-small">最新资讯</h3>
+                            </div>
+                            <div class="col-md-12 text" id="news">
+                                <div class="col-sm-4 single-news">
+                                    <article>
+                                        <img src="home/img/news1.jpg" alt="">
+                                        <div class="content">
+                                            <h3>正起航丨皓之睿上海国际职业装博览会全回顾</h3>
+                                            <p>真正优秀的用户界面会被无视，而糟糕的设计则迫使用户注意界面的，而非内容。用户都是带着目的来访问网站的：买本新书、学习JQuery、与朋友分享一篇文章、发现新音乐写小说或者仅仅是寻找最近</p>
+                                            <span class="date">2017-5-25</span>
+                                        </div>
+                                        <a href="#" class="link"></a>
+                                    </article>
+                                </div>
+                                <div class="col-sm-4 single-news">
+                                    <article>
+                                        <img src="home/img/news2.jpg" alt="">
+                                        <div class="content">
+                                            <h3>设计只是一种过程</h3>
+                                            <p>我觉得很多设计师都有一个种通病包括我自己和身边一些设计，再说这个事情之前，我也跟一些设计师聊过，我才敢这样说这个事情。为什么呢？很多设计师，觉得看别人的作品，临摹别人的作品是一件</p>
+                                            <span class="date">2017-5-25</span>
+                                        </div>
+                                        <a href="#" class="link"></a>
+                                    </article>
+                                </div>
+                                <div class="col-sm-4 single-news">
+                                    <article>
+                                        <img src="home/img/news4.jpg" alt="">
+                                        <div class="content">
+                                            <h3>汇智绘美 编程未来</h3>
+                                            <p>“xx编程之美挑战赛”是面向在校学生开展的大型编程比赛，致力于为年轻开发者提供国际一流水平的开发与交流机会，鼓励他们开发潜能、通过创新方法应对现实问题。本届大赛分为资格赛、初赛、复赛和决赛四轮，历时近两个月</p>
+                                            <span class="date">2017-5-25</span>
+                                        </div>
+                                        <a href="#" class="link"></a>
+                                    </article>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row no-margin">
+                            <div class="col-md-12 padding-leftright-null">
+                                <div class="text padding-onlytop-md padding-onlybottom-lg padding-md-top-null">
+                                    <a href="{{ url_for('home.news') }}" class="btn-pro">查看更多</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+                    <!-- END Section News -->
+                    <!-- Section Partners -->
+                    <div class="container">
+                        <div class="row no-margin">
+                            <div class="col-md-12 padding-leftright-null">
+                                <div class="partners">
+                                    <div class="col-xs-6 col-sm-4 col-md-2 text padding-leftright-null">
+                                        <h3>合作品牌</h3>
+                                    </div>
+                                    <div class="col-xs-6 col-sm-4 col-md-2 partner">
+                                        <img class="img-responsive" src="../../static/home/img/h1.png" alt="">
+                                    </div>
+                                    <div class="col-xs-6 col-sm-4 col-md-2 partner">
+                                        <img class="img-responsive" src="../../static/home/img/h2.png" alt="">
+                                    </div>
+                                    <div class="col-xs-6 col-sm-4 col-md-2 partner">
+                                        <img class="img-responsive" src="../../static/home/img/h3.png" alt="">
+                                    </div>
+                                    <div class="col-xs-6 col-sm-4 col-md-2 partner">
+                                        <img class="img-responsive" src="../../static/home/img/h4.png" alt="">
+                                    </div>
+                                    <!-- <div class="col-xs-6 col-sm-4 col-md-2 partner">
+                                        <img class="img-responsive" src="home/img/logo-square-6-dark.png" alt="">
+                                    </div> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END Section Partners -->
+                </div>
+            </div>
+            <!--  END Page Content -->
+        </div>
+    </div>
+{% endblock %}

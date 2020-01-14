@@ -1,0 +1,29 @@
+{% extends "home/base.html" %}
+
+{% block contentBlock %}
+    <div id="main-wrap">
+        <!--  Page Content  -->
+        <div id="page-content" class="header-static">
+            <!--  Page Header  -->
+            <div id="page-header" class="secondary-background">
+                <div class="container">
+                    <div class="row no-margin">
+                        <div class="text">
+                            <h2 class="white">反馈提交成功！</h2>
+                            <h3 class="white">谢谢您的反馈，尽快给您回复！</h3>
+                            <ul class="breadcrumb white">
+                                <li><a href="{{ url_for('home.index') }}">官网首页</a></li>
+                                <li><a href="{{ url_for('home.contact') }}">返回上页</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="map">
+            <iframe src="../../static/home/map/map.html"></iframe>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>皓之睿后台</title>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="stylesheet" type="text/css" href="../../static/admin/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="../../static/admin/css/main.css">
+    <link rel="stylesheet" href="../../static/common/css/jquery.pagination.css">
+    <script type="text/javascript" src="../../static/common/js/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="../../static/common/js/jquery.pagination.min.js"></script>
+</head>
+
+<body>
+<div class="breadcrub">
+    当前位置: 后台管理 > 反馈审核
+    <form class="news_filter_form">
+        <input type="text" placeholder="请输入反馈内容关键字" name="keywords" class="input_txt">
+        <input type="submit" value="搜 索" class="input_sub">
+    </form>
+</div>
+
+<div class="pannel">
+    <table class="common_table">
+        <tr>
+            <th width="5%">反馈编号</th>
+            <th width="10%">反馈时间</th>
+            <th width="40%">反馈内容</th>
+            <th width="10%">反馈用户</th>
+            <th width="15%">反馈邮箱</th>
+            <th width="10%">回复与否</th>
+            <th width="10%">管理操作</th>
+        </tr>
+
+        {% for feedback in data.feedback_list %}
+            <tr>
+                <td>{{ feedback.id }}</td>
+                <td>{{ feedback.create_time }}</td>
+                <td>{{ feedback.fb_content }}</td>
+                <td>{{ feedback.fb_user }}</td>
+                <td>{{ feedback.fb_email }}</td>
+                <td>{{ feedback.fb_whether_reply }}</td>
+                <td class="btnbox">
+                    <a href="{{ url_for('admin.feedback_reply') }}?feedback_id={{ feedback.id }}&page={{ data.current_page }}" class="review"
+                       id="feedback_replay">回复</a>
+                    <a href="{{ url_for('admin.feedback_delete') }}?feedback_id={{ feedback.id }}" class="delete">删除</a>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+</div>
+
+<div class="box">
+    <div id="pagination" class="page"></div>
+</div>
+
+<script>
+    $(function () {
+        $("#pagination").pagination({
+            currentPage: {{ data.current_page }},
+            totalPage: {{ data.total_page }},
+            callback: function (current) {
+                window.location = '/admin/feedback_review?page=' + current
+            }
+        });
+    });
+</script>
+
+</body>
+</html>

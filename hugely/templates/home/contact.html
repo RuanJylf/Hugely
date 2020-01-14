@@ -1,0 +1,123 @@
+{% extends "home/base.html" %}
+
+{% block contentBlock %}
+    <div id="main-wrap">
+        <!--  Page Content  -->
+        <div id="page-content" class="header-static">
+            <!--  Page Header  -->
+            <div id="page-header" class="secondary-background">
+                <div class="container">
+                    <div class="row no-margin">
+                        <div class="text">
+                            <h1 class="white">联系反馈</h1>
+                            <ul class="breadcrumb white">
+                                <li><a href="{{ url_for('home.index') }}">官网首页</a></li>
+                                <li><a href="#" onclick="javascript:history.back(-1);">返回上页</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--  END Page Header  -->
+            <div id="home-wrap" class="content-section fullpage-wrap">
+                <!--  Contact section  -->
+                <div class="container">
+                    <div class="map">
+                        <iframe src="../../static/home/map/map.html"></iframe>
+                    </div>
+                    <div class="row no-margin padding-lg">
+                        <div class="col-md-12 padding-leftright-null">
+                            <div class="text text-left padding-topbottom-null">
+                                <h2>发送消息</h2>
+                            </div>
+                        </div>
+                        <div class="row no-margin padding-onlytop-md">
+                            <!--  Contact Form  -->
+                            <div class="col-md-5 padding-leftright-null">
+                                <div class="text padding-md-top-null">
+                                    <div class="box-form">
+                                        <form id="contact-form">
+                                            <meta name="csrf-token" content="{{ csrf_token() }}">
+                                            <div class="row no-margin">
+                                                <div class="col-md-12 padding-leftright-null">
+                                                    <label for="name">姓名<sup>*</sup></label>
+                                                    <input class="form-field" name="name" id="name" type="text"
+                                                           placeholder="Your Name">
+                                                </div>
+                                                <div class="col-md-12 padding-leftright-null">
+                                                    <label for="mail">邮件<sup>*</sup></label>
+                                                    <input class="form-field" name="mail" id="mail" type="text"
+                                                           placeholder="Your Email">
+                                                </div>
+                                            </div>
+                                            <div class="row no-margin">
+                                                <div class="col-md-12 padding-leftright-null">
+                                                    <label for="messageForm">消息<sup>*</sup></label>
+                                                    <textarea class="form-field" name="messageForm" id="messageForm"
+                                                              rows="6" placeholder="Your Message"></textarea>
+                                                    <div class="error_tip" style="display: block">{{ errmsg }}</div>
+                                                    <div class="submit-area padding-onlytop-sm">
+                                                        <input type="submit" id="submit-contact"
+                                                               class="btn-alt active shadow" value="发送消息">
+                                                        <div id="msg" class="message"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--  END Contact Form  -->
+                            <!--  Contact Info  -->
+                            <div class="col-md-7 padding-leftright-null">
+                                <div class="row no-margin padding-onlytop-md">
+                                    <div class="col-md-6 padding-leftright-null">
+                                        <div class="text padding-md-top-null">
+                                            <h3 class="margin-bottom-small">公司地址</h3>
+                                            <p class="margin-null">江苏省南京市秦淮区永智路6号中国云计算创新基地A座8楼</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 padding-leftright-null">
+                                        <div class="text padding-md-top-null">
+                                            <h3 class="margin-bottom-small">全国服务热线</h3>
+                                            <p class="margin-bottom-extrasmall">
+                                                <a href="" class="400-096-0996">400-096-0996</a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row no-margin">
+                                    <div class="col-md-6 padding-leftright-null">
+                                        <div class="text padding-md-top-null">
+                                            <h3 class="margin-bottom-small">发送邮件</h3>
+                                            <p class="margin-bottom-extrasmall">
+                                                <a href="" class="simple">dresscloud@yuns1.com</a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 padding-leftright-null">
+                                        <div class="text padding-md-top-null padding-md-bottom-null">
+                                            <h3 class="margin-bottom-small">赶快和我们有个项目合作吧</h3>
+                                            <p class="margin-bottom-extrasmall">诚实、质量</p>
+                                            <p class="margin-null">高效、便捷</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--  END Contact Info  -->
+                        </div>
+                    </div>
+                </div>
+                <!--  END Contact section  -->
+                <div class="row no-margin">
+                    <!--  Map. Settings in maps.js  -->
+                    <div class="col-md-12 padding-leftright-null map">
+                        <div id="map"></div>
+                    </div>
+                    <!--  END Map  -->
+                </div>
+            </div>
+        </div>
+        <!--  END Page Content -->
+    </div>
+{% endblock %}
